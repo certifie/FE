@@ -7,12 +7,14 @@ import {CertificatesContainerComponent} from './certificates-container.component
 import {AddCertificateComponent} from './add/add-certificate.component';
 import {CertificatesListComponent} from './certificates-list/certificates-list.component';
 import {CertificatesRoutingModule} from './certificates-routing.module';
+import { CertificateComponent } from './certificates-list/certificate/certificate.component';
 
 @NgModule({
   declarations: [
     CertificatesContainerComponent,
     AddCertificateComponent,
-    CertificatesListComponent
+    CertificatesListComponent,
+    CertificateComponent
   ],
   imports: [
     CommonModule,

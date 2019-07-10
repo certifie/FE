@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
 export class AddCertificateComponent implements OnInit {
   public notesForm: FormGroup;
 
-  constructor(private notesSvc: CertificatesService, private router: Router) { }
+  constructor(private certificatesSvc: CertificatesService, private router: Router) { }
 
   ngOnInit() {
     this.initForm();
@@ -20,13 +20,15 @@ export class AddCertificateComponent implements OnInit {
   private initForm(): void {
     this.notesForm = new FormGroup({
       title: new FormControl(''),
-      content: new FormControl('')
+      description: new FormControl(''),
+      authority: new FormControl('')
     });
   }
 
   public onSubmit(): void {
     const data = this.notesForm.getRawValue();
-    this.notesSvc.postNote(data)
+    data['id'] = Math.floor(Math.random() * 10);
+    this.certificatesSvc.postCertificate(data)
       .subscribe(() => this.router.navigate(['/certificates']));
   }
 

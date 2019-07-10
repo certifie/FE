@@ -14,7 +14,7 @@ export class CertificatesService {
     return this.httpClient.get(environment.apiUrl);
   }
 
-  public postNote(data): Observable<any> {
+  public postCertificate(data): Observable<any> {
     return this.httpClient.post(environment.apiUrl, data);
   }
 }
