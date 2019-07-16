@@ -9,8 +9,8 @@ import {Router} from '@angular/router';
   styleUrls: ['./add-certificate.component.scss']
 })
 export class AddCertificateComponent implements OnInit {
-  public notesForm: FormGroup;
-
+  public createCertificateForm: FormGroup;
+  
   constructor(private certificatesSvc: CertificatesService, private router: Router) { }
 
   ngOnInit() {
@@ -18,7 +18,7 @@ export class AddCertificateComponent implements OnInit {
   }
 
   private initForm(): void {
-    this.notesForm = new FormGroup({
+    this.createCertificateForm = new FormGroup({
       title: new FormControl(''),
       description: new FormControl(''),
       authority: new FormControl('')
@@ -26,8 +26,7 @@ export class AddCertificateComponent implements OnInit {
   }
 
   public onSubmit(): void {
-    const data = this.notesForm.getRawValue();
-    data['id'] = Math.floor(Math.random() * 10);
+    const data = this.createCertificateForm.getRawValue();
     this.certificatesSvc.postCertificate(data)
       .subscribe(() => this.router.navigate(['/certificates']));
   }
