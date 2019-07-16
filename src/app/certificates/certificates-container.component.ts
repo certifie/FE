@@ -3,7 +3,7 @@ import {Observable} from 'rxjs';
 import {CertificatesService} from './certificates.service';
 
 @Component({
-  selector: 'app-notes',
+  selector: 'app-certificates-container',
   templateUrl: './certificates-container.component.html',
   styleUrls: ['./certificates-container.component.scss']
 })
