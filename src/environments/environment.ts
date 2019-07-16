@@ -7,6 +7,3 @@ export const environment = {
   // apiUrl: 'https://certifie.herokuapp.com/api/notes'
   apiUrl: 'http://localhost:3000/certificates'
 };
-
-
-};
