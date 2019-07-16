@@ -1,9 +1,6 @@
 <div class="main_container">
-  <div class="card" style="width: 18rem;" *ngFor="let certificate of certificates">
-    <div class="card-body">
-      <h5 class="card-title">{{certificate.title}}</h5>
-      <p class="card-text">Content: {{certificate.content}}</p>
-    </div>
-  </div>
+  <ng-container *ngFor="let certificate of certificates">
+    <app-certificate [certificate]="certificate"></app-certificate>
+  </ng-container>
 </div>
 

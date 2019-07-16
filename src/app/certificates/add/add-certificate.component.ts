@@ -9,24 +9,25 @@ import {Router} from '@angular/router';
   styleUrls: ['./add-certificate.component.scss']
 })
 export class AddCertificateComponent implements OnInit {
-  public notesForm: FormGroup;
-
-  constructor(private notesSvc: CertificatesService, private router: Router) { }
+  public createCertificateForm: FormGroup;
+  
+  constructor(private certificatesSvc: CertificatesService, private router: Router) { }
 
   ngOnInit() {
     this.initForm();
   }
 
   private initForm(): void {
-    this.notesForm = new FormGroup({
+    this.createCertificateForm = new FormGroup({
       title: new FormControl(''),
-      content: new FormControl('')
+      description: new FormControl(''),
+      authority: new FormControl('')
     });
   }
 
   public onSubmit(): void {
-    const data = this.notesForm.getRawValue();
-    this.notesSvc.postNote(data)
+    const data = this.createCertificateForm.getRawValue();
+    this.certificatesSvc.postCertificate(data)
       .subscribe(() => this.router.navigate(['/certificates']));
   }
 

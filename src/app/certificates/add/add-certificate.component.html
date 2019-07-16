@@ -1,12 +1,17 @@
-<form [formGroup]="notesForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="createCertificateForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
-    <label for="noteTitle">Note title</label>
-    <input type="text" class="form-control" id="noteTitle" placeholder="Enter note title" formControlName="title">
+    <label for="certificateTitle">Certificate title</label>
+    <input type="text" class="form-control" id="certificateTitle" placeholder="Enter certificate title" formControlName="title">
   </div>
 
   <div class="form-group">
-    <label for="noteContent">Note content</label>
-    <input type="text" class="form-control" id="noteContent" placeholder="Enter note content" formControlName="content">
+    <label for="certificateDescription">Certificate description</label>
+    <input type="text" class="form-control" id="certificateDescription" placeholder="Enter certificate content" formControlName="description">
+  </div>
+
+  <div class="form-group">
+    <label for="certificateAuthority">Certificate authority</label>
+    <input type="text" class="form-control" id="certificateAuthority" placeholder="Enter certificate authority" formControlName="authority">
   </div>
 
   <button class="btn btn-primary" type="submit">Submit</button>
